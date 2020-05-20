@@ -1,0 +1,631 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ *= require font-awesome
+ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.clearfix::after {
+   content: "";
+   display: block;
+   clear: both;
+}
+body {
+	font-family: Arial, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", Osaka, メイリオ, Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+	font-weight: 400;
+	font-size: 15px;
+	color: #141710;
+}
+.top_wrap {
+	max-width: 1000px;
+	margin: 0 auto;
+}
+.wrap {
+	max-width: 1270px;
+	margin: 0px auto;
+}
+
+a {
+	text-decoration: none;
+}
+h2 {
+	padding: 15px 20px;
+}
+h3 {
+	padding: 10px 20px;
+}
+.flash {
+	color: #f21d99;
+	position: absolute;
+	top: 0;
+}
+/*----------------エラーメッセージ----------------*/
+.error_messages {
+	margin: 10px 0px;
+	color: #f21d99;
+}
+.error_messages_list {
+	margin-left: 40px;
+}
+/*----------------共通テキスト----------------*/
+.txtl {
+	font-size: 23px;
+}
+.txtm{
+ font-size: 19px;
+}
+.txts {
+	font-size: 15px;
+}
+.txtxs {
+	font-size: 13px;
+}
+.txtbold {
+	font-weight: 800;
+}
+.txtthin {
+	font-weight: 300;
+}
+.gray {
+	color: #657786;
+}
+.pink {
+	color: #f21d99;
+}
+.white {
+	color: #fff;
+}
+.black {
+	color: #141710;
+}
+/*----------------共通ボタン----------------*/
+.btns {
+	text-align: center;
+	padding: 5px 20px;
+	cursor: pointer;
+}
+.btns:focus,
+.btnm:focus {
+	outline: none;
+}
+.btnm {
+	text-align: center;
+	width: 100%;
+	padding: 10px 0px;
+	cursor: pointer;
+}
+.btnwhite {
+	color: #f21d99;
+	border-radius: 50px;
+	border: solid 1px #f21d99;
+	background-color: #fff;
+}
+.btnwhite:hover {
+	background-color: #ffadcf;
+}
+.btnpink {
+	color: #fff;
+	border-radius: 50px;
+	background-color:#f21d99;
+	border: solid 1px #fff;
+}
+.btnpink:hover {
+	background-color: #e31b71;
+}
+.login_btn {
+	margin-top: 20px;
+}
+/*----------------共通検索フォーム----------------*/
+.form {
+	position: relative;
+}
+.search_form {
+	width: 474px;
+	background-color: #E6ECF0;
+	border: none;
+	border-radius: 50px;
+	padding: 8px 8px 8px 30px;
+	font-size: 15px;
+}
+.search_form:focus {
+	outline: none;
+	background-color: #fff;
+	border: solid 1px #f21d99;
+}
+.search_icon {
+	position: absolute;
+	left: 10px;
+	top: 10px;
+	color: #657786;
+}
+/*----------------共通メイン箱---------------*/
+.box {
+	width: 100%;
+	padding: 10px;
+	border-top: solid 1px #E6ECF0;
+}
+
+/*----------------共通横並び---------------*/
+.flex {
+	display: flex;
+	justify-content: space-between;
+}
+
+/*----------------共通フッター---------------*/
+.footer {
+	padding: 10px 0px;
+}
+/*----------------共通フォーム--------------*/
+.form_head {
+	text-align: center;
+	padding: 15px 20px;
+}
+
+.form_wrap {
+	width: 540px;
+	margin: 0 auto;
+}
+.form_label {
+	padding: 5px;
+	display: inline-block;
+	width: 100%;
+	background-color: #E6ECF0;
+}
+
+.form_area {
+	margin-bottom: 20px;
+	border: none;
+	border-bottom: 2px solid #657786;
+	background-color: rgba(242, 29, 120, 0.1);
+	height: 40px;
+	width: 100%;
+	padding: 10px;
+}
+.form_area:focus {
+	border-bottom: 2px solid #f21d99;
+	outline: none;
+}
+.form_txtarea {
+	width: 100%;
+	height: 100px;
+	border: 1px solid #657786;
+	padding: 10px;
+	margin-bottom: 15px;
+}
+.form_txtarea:focus {
+	border: 1px solid #f21d99;
+	outline: none;
+}
+
+/*----------------トップページ用----------------*/
+/*----------------header----------------*/
+.top_header {
+	width: 100%;
+	background-color: #fff;
+	position: fixed;
+	border-bottom: solid 1px #CCD6DD;
+}
+.top_header_wrap {
+	height: 54px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.top_header-left {
+	display: flex;
+}
+.logo{
+	width: 30px;
+	margin-right: 10px;
+}
+.top_header-right {
+	display: flex;
+}
+.top_header-right a {
+	margin-left: 10px;
+}
+.top_header_box {
+	width: 100%;
+	height: 54px;
+}
+
+/*----------------main----------------*/
+.top_main {
+	width: 600px;
+	border: solid 1px #E6ECF0;
+}
+.search_nav {
+	margin-top: 20px;
+}
+.search_list {
+	display: flex;
+	justify-content: space-around;
+	list-style: none;
+}
+.search_list_item {
+	display: inline-block;
+	padding: 20px 10px;
+}
+.search_list_item:focus {
+	border-bottom: 2px solid #f21d99;
+}
+.search_list_item:hover {
+	color: #f21d99;
+	background-color: rgba(242, 29, 120, 0.1);
+}
+.top_img {
+	width: 100%;
+	margin-bottom: 5px;
+}
+
+/*----------------aside---------------*/
+.top_aside {
+	width: 350px;
+	text-align: center;
+}
+.top_aside_cont {
+	margin-top: 10px;
+	padding-top: 20px;
+	padding-bottom: 50px;
+	border: solid 1px #E6ECF0;
+	border-radius: 24px;
+}
+.top_aside_btn {
+	display: inline-block;
+	width: 90%;
+	margin: 10px;
+}
+.top_aside_img {
+
+}
+/*----------------ログイン後のページ用----------------*/
+.mobile_flex {
+	display: flex;
+}
+.pink_bg {
+	background-color: rgba(242, 29, 120, 0.1);
+}
+/*----------------左のナビ----------------*/
+.header {
+	width: 230px;
+}
+.nav {
+	margin: 30px;
+}
+.list {
+	margin: 20px 0px;
+	list-style: none;
+}
+.nav_cont {
+	padding: 10px 0px;
+}
+.nav_cont a {
+	color: #141710;
+}
+.nav_cont a:hover {
+	color: #f21d99;
+}
+.header .user_img {
+	margin-left: 0px;
+}
+.header .users {
+	padding: 10px 0px;
+}
+.nav_cont i {
+	padding-right: 10px;
+}
+.profile_icon{
+	margin-top: 10px;
+	padding: 3px 20px;
+	color: #141710;
+}
+.profile_icon:hover {
+	background-color: rgba(242, 29, 120, 0.1);
+	border-radius: 50px;
+}
+/*----------------右のサイドバー----------------*/
+.aside {
+	padding: 20px 15px;
+	width: 350px;
+	text-align: left;
+}
+.aside_cont {
+	margin-top: 20px;
+	padding: 10px 0px;
+	border-radius: 24px;
+}
+.aside .search_form {
+	width: 100%;
+}
+
+.showmore {
+	border-top: solid 1px #E6ECF0;
+}
+/*----------------メイン----------------*/
+.main {
+	width: 600px;
+	border: solid 1px #E6ECF0;
+}
+.sub_head {
+	padding-left: 10px;
+}
+/*----------------ユーザー一覧----------------*/
+.users {
+	padding: 10px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.user_img {
+	border-radius: 50%;
+	width: 50px;
+	margin: 10px;
+	padding: 3px;
+}
+.user_icon {
+
+}
+.user_cont {
+	display: flex;
+}
+.user_name {
+	margin-top: 10px;
+}
+.user_btn {
+	margin-right: 10px;
+}
+
+/*----------------投稿一覧----------------*/
+.posts {
+	padding: 20px;
+	display: flex;
+}
+
+.post_img {
+	width: 100%;
+	margin-top: 20px;
+}
+.post_info {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+}
+.post_info a {
+	padding: 10px;
+}
+.index_post_info {
+	margin: 15px 0px;
+}
+.comments{
+	margin-right: 20px;
+}
+.destroy {
+	margin-left: 20px;
+}
+.likes {
+	margin-right: auto;
+}
+
+.likes:hover,
+.comments:hover,
+.edit:hover,
+.destroy:hover {
+	color: #f21d99;
+}
+.body_txt {
+	margin-top: 20px;
+}
+/*----------------ユーザー詳細(プロフィール画面）----------------*/
+.profile {
+	width: 100%;
+}
+.btn_wrap {
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	width: 100%;
+	height: 100px;
+	background-color: #f21d99;
+}
+.profile_cont {
+	position: relative;
+	padding: 100px 30px 30px 50px;
+
+}
+.profile_img {
+	position: absolute;
+	top: -80px;
+	left: 20px;
+	width: 150px;
+	border-radius: 50%;
+	margin-right: auto;
+	background-color: #fff;
+	padding: 3px;
+}
+.profile_btn{
+	margin-right: 10px;
+	width: 130px;
+}
+.profile_info {
+	margin-top: 30px;
+	margin-right: 20px;
+	color: #141710;
+}
+.profile_info:hover,
+.profile_info span:hover {
+	color: #f21d99;
+}
+
+.introduction {
+	padding: 10px 0px;
+}
+.profile_icon p{
+	font-size: 13px;
+}
+
+/*----------------投稿詳細----------------*/
+
+
+
+/*----------------投稿画面(フイート画面）----------------*/
+.pink_border {
+	padding: 10px;
+	border: solid 1px #f21d99;
+	border-radius: 20px;
+}
+.fweet_btn {
+	margin: 10px 0px;
+	padding: 10px 30px;
+}
+.fweet_form {
+	width: 95%;
+	margin: 0 auto;
+}
+/*----------------プロフィール編集画面----------------*/
+.save_btn {
+	margin: 10px 0px;
+	padding: 10px 30px;
+}
+.profile_form {
+	width: 95%;
+	margin: 0 auto;
+}
+.align-right {
+	text-align: right;
+}
+/*----------------コメント----------------*/
+.space {
+	height: 40px;
+	text-align: center;
+}
+.comment_form {
+	padding-top: 30px;
+	border-top: solid 1px #E6ECF0;
+	border-bottom: solid 1px #E6ECF0;
+}
+.comment_box {
+	width: 100%;
+	padding: 20px;
+	border-top: solid 1px  #E6ECF0;
+}
+.mobile_list {
+	display:  none;
+}
+
+/*----------------モバイル版---------------*/
+@media(max-width: 1000px) {
+
+.top_wrap {
+	max-width: 100%;
+}
+.wrap {
+	max-width: 100%;
+}
+.form_wrap,
+.top_header .top_wrap {
+	width: 95%;
+}
+/*----------------共通テキスト----------------*/
+.txtl {
+	font-size: 19px;
+}
+.txtm{
+ font-size: 15px;
+}
+.txts {
+	font-size: 13px;
+}
+.txtxs {
+	font-size: 13px;
+}
+/*----------------共通----------------*/
+
+.form {
+	display: none;
+}
+.flex {
+	flex-direction: column;
+}
+.footer {
+	margin: 20px 0px;
+	text-align: center;
+}
+.footer br {
+	display: none;
+}
+
+/*----------------トップページ----------------*/
+.main,
+.top_main {
+	width: 100%;
+	margin: 0 auto;
+}
+
+.list_item {
+	padding: 20px 8px;
+}
+.top_aside {
+	width: 95%;
+	margin: 20px auto;
+}
+.top_aside_btn {
+	width: 300px;
+}
+.mobile_non {
+	display: none;
+}
+
+/*----------------メインページ----------------*/
+
+.mobile_fixed_head{
+	width: 100%;
+	position: fixed;
+	background-color: #fff;
+	border-bottom: 1px solid  #E6ECF0;
+}
+.mobile_head {
+	width: 100%;
+	height: 48px
+}
+.list {
+	display: none;
+}
+.header {
+	width: 200px;
+}
+.mobile_list {
+	margin: 20px 0px 0px 20px;
+	display: block;
+	list-style: none;
+}
+.mobile_list i {
+	font-size: 30px;
+}
+.profile_img {
+	width: 100px;
+	top: -30px;
+}
+.profile_icon p{
+	display: none;
+}
+}
+
+
+
+
+
+

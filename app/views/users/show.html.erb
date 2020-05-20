@@ -1,0 +1,64 @@
+
+<%= render 'users/header', user:@user %>
+
+<main class="main">
+
+		<h2 class="txtm txtbold mobile_fixed_head"><%= @user.name %><span class="sub_head txtxs gray">Fweets</span></h2>
+			<div class="mobile_head"></div>
+			<div class="profile">
+				<div class="btn_wrap">
+					<% if @user.id == current_user.id %>
+					<%= link_to destroy_user_session_path, method: :delete, class:"profile_btn" do %>
+					<div class="btnm btnpink">Log out</div>
+					<% end %>
+					<%= link_to edit_user_path(current_user.id), class:"profile_btn" do %>
+					<div class="btnm btnwhite">Edit profile</div>
+					<% end %>
+					<% else %>
+					<a class="profile_btn">
+						<%= render 'relationships/big_follow_button' %>
+					</a>
+					<% end %>
+				</div>
+
+					<div class="box profile_cont">
+						<%= attachment_image_tag @user, :profile_image, :fill,1000,1000, fallback:"logo.png", class:"profile_img"%>
+							<p class="txtl txtbold"><%= @user.name %></p><p class="txts gray">@<%= @user.id %></p>
+							<p class="introduction txts"><%= @user.introduction %></p>
+							<%= render 'relationships/stats' %>
+					</div>
+
+					<% @posts.each do |post| %>
+					<div class="box posts">
+						<%= link_to post_path(post) do %>
+						<div class="user_icon">
+						<%= attachment_image_tag @user, :profile_image, :fill,1000,1000, fallback:"logo.png",  class:"user_img"%>
+						</div>
+						<div class="user_name">
+							<p class="txts txtbold black"><%= @user.name %></p>
+							<p class="txts gray">@<%= @user.id %></p>
+						<p class="txts body_txt black"><%= post.body %></p>
+						 <%= attachment_image_tag post, :image, class:"post_img"%>
+						<div class="index_post_info">
+							<a href="" class="txtxs gray comments">
+								<%= fa_icon 'comment', class:"fa-fw" %><%= post.post_comments.count %>
+							</a>
+							<% if post.liked_by?(current_user) %>
+	    						<%= link_to post_likes_path(post.id), method: :delete, class:"txtxs gray likes" do %>
+	    							<%= fa_icon 'heart', class:"fa-fw", style:"color: #f21d99;" %><%= post.likes.count %>
+	    						<% end %>
+							<% else %>
+	    						<%= link_to post_likes_path(post.id), method: :post, class:"txtxs gray likes" do %>
+	    							<%= fa_icon 'heart', class:"fa-fw" %><%= post.likes.count %>
+	    						<% end %>
+							<% end %>
+						</div>
+					</div>
+						<% end %>
+					</div>
+			<% end %>
+			</div>
+
+	</main>
+
+<%= render 'users/aside' , user:@user %>

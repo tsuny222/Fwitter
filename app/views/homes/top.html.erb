@@ -1,0 +1,81 @@
+<header class="top_header">
+		<div class="top_header_wrap top_wrap">
+			<div class="top_header-left">
+				<%= link_to root_path do %>
+				<img src="/assets/logo.png" class="logo">
+				<% end %>
+				<form class="form">
+					<input type="search" name="" value="" placeholder="キーワード検索" class="search_form">
+					<%= fa_icon 'search', class:"search_icon" %>
+				</form>
+			</div>
+			<div class="top_header-right">
+				<%= link_to new_user_session_path do %>
+				<p class="btns btnwhite">ログイン</p></a>
+				<% end %>
+				<%= link_to new_user_registration_path do %>
+				<p class="btns btnpink">アカウント作成</p>
+				<% end %>
+			</div>
+		</div>
+	</header><!-- /header -->
+		<div class="top_header_box"></div>
+	<section class="section">
+		<div class="top_wrap flex">
+	<main class="top_main">
+		<h2 class="txtm">話題を検索</h2>
+		<nav class="search_nav">
+			<ul class="search_list">
+				<li><a href="" class="search_list_item txts gray">おすすめ</a></li>
+				<li><a href="" class="search_list_item txts gray">トレンド</a></li>
+				<li><a href="" class="search_list_item txts gray">ニュース</a></li>
+				<li><a href="" class="search_list_item txts gray">スポーツ</a></li>
+				<li><a href="" class="search_list_item txts gray">ユーモア</a></li>
+				<li><a href="" class="search_list_item txts gray">エンターテインメント</a></li>
+			</ul>
+		</nav>
+		<img src="/assets/main.jpg" class="top_img">
+			<div class="box">
+					<p class="txtxs gray">日本トレンド</p>
+					<p class="txts">予言通り</p>
+					<p class="txts gray">3,567件のフイート</p>
+			</div>
+			<div class="box">
+					<p class="txtxs gray">日本トレンド</p>
+					<p class="txts">予言通り</p>
+					<p class="txts gray">3,567件のフイート</p>
+			</div>
+			<div class="box">
+					<p class="txtxs gray">日本トレンド</p>
+					<p class="txts">予言通り</p>
+					<p class="txts gray">3,567件のフイート</p>
+			</div>
+			<div class="box">
+					<p class="txtxs gray">日本トレンド</p>
+					<p class="txts">予言通り</p>
+					<p class="txts gray">3,567件のフイート</p>
+			</div>
+			<div class="box">
+					<p class="txtxs gray">日本トレンド</p>
+					<p class="txts">予言通り</p>
+					<p class="txts gray">3,567件のフイート</p>
+			</div>
+	</main>
+	<aside class="top_aside">
+	<div class="top_aside_cont">
+		<img src="/assets/aside.jpg" class="top_aside_img">
+		<h2 class="txtm">ふいに思ったことをフイートしよう</h2>
+		<%= link_to(new_user_session_path, class:"top_aside_btn") do %>
+				<p class="btns btnwhite">ログイン</p></a>
+		<% end %>
+		<p class="txtxs gray">または</p>
+		<%= link_to(new_user_registration_path, class:"top_aside_btn") do %>
+			<p class="btns btnpink">アカウント作成</p>
+		<% end %>
+	</div>
+	<footer class="footer">
+			<p class="txtxs">利用規約　プライバシーポリシー　Cookie　広告情報<br>もっと見る　©︎2020 Fwitter, Inc.</p>
+		</footer>
+	</aside>
+	</div>
+	</section>

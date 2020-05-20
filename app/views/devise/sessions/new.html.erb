@@ -1,0 +1,19 @@
+<div class="form_wrap">
+    <h2 class="form_head txtl">ログイン</h2>
+<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  <form class="profile_form">
+    <label for="email" class="form_label gray">メールアドレス</label>
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"form_area" %>
+
+     <label for="password" class="form_label gray">パスワード</label>
+    <%= f.password_field :password, autocomplete: "current-password", class:"form_area" %>
+
+  <% if devise_mapping.rememberable? %>
+      <%= f.check_box :remember_me %>
+      <%= f.label :remember_me, class:"pink" %>
+  <% end %>
+
+    <%= f.submit "ログイン", class:"btnm btnpink txts login_btn" %>
+
+<% end %>
+</div>

@@ -1,0 +1,79 @@
+<div class="wrap mobile_flex">
+<header class="header">
+		<nav class="nav mobile_fixed_left">
+			<ul class="list">
+				<li class="nav_cont">
+					<%= link_to root_path do %>
+						<img src="/assets/logo.png" class="logo">
+					<% end %>
+					</a>
+				</li>
+
+				<li class="nav_cont">
+					<%= link_to(posts_path, class:"txtl txtbold") do %>
+						<%= fa_icon 'home', class:"fa-fw"%>Home
+					<% end %>
+					</li>
+				<li class="nav_cont">
+					<%= link_to(users_path, class:"txtl txtbold") do %>
+					<%= fa_icon 'user', class:"fa-fw" %>Users
+					<% end %>
+				</li>
+				<li class="nav_cont"><a href="" title="" class="txtl txtbold"><%= fa_icon 'bell', class:"fa-fw" %>Alert</a></li>
+				<li class="nav_cont"><a href="" title="" class="txtl txtbold"><%= fa_icon 'envelope', class:"fa-fw" %>Messages</a></li>
+				<li class="nav_cont"><a href="" title="" class="txtl txtbold"><%= fa_icon'bookmark', class:"fa-fw"%>Bookmarks</a></li>
+				<li class="nav_cont"><a href="" title="" class="txtl txtbold"><%= fa_icon'list-alt', class:"fa-fw"%>Lists</a></li>
+				<li class="nav_cont">
+					<%= link_to(user_path(current_user), class:"txtl txtbold") do %>
+					<%= fa_icon'id-card', class:"fa-fw"%>Profile
+					<% end %>
+				</li>
+				<li class="nav_cont"><a href="" title="" class="txtl txtbold"><%= fa_icon'chevron-circle-down', class:"fa-fw"%>More</a></li>
+			</ul>
+			<ul class="mobile_list">
+				<li class="nav_cont">
+					<%= link_to root_path do %>
+						<img src="/assets/logo.png" class="logo">
+					<% end %>
+					</a>
+				</li>
+
+				<li class="nav_cont">
+					<%= link_to(posts_path, class:"txtl txtbold") do %>
+						<%= fa_icon 'home', class:"fa-fw"%>
+					<% end %>
+					</li>
+				<li class="nav_cont">
+					<%= link_to(users_path, class:"txtl txtbold") do %>
+					<%= fa_icon 'user', class:"fa-fw" %>
+					<% end %>
+				</li>
+				<li class="nav_cont"><a href="" title="" class="txtl txtbold"><%= fa_icon 'bell', class:"fa-fw" %></a></li>
+				<li class="nav_cont"><a href="" title="" class="txtl txtbold"><%= fa_icon 'envelope', class:"fa-fw" %></a></li>
+				<li class="nav_cont"><a href="" title="" class="txtl txtbold"><%= fa_icon'bookmark', class:"fa-fw"%></a></li>
+				<li class="nav_cont"><a href="" title="" class="txtl txtbold"><%= fa_icon'list-alt', class:"fa-fw"%></a></li>
+				<li class="nav_cont">
+					<%= link_to(user_path(current_user), class:"txtl txtbold") do %>
+					<%= fa_icon'id-card', class:"fa-fw"%>
+					<% end %>
+				</li>
+				<li class="nav_cont"><a href="" title="" class="txtl txtbold"><%= fa_icon'chevron-circle-down', class:"fa-fw"%></a></li>
+			</ul>
+			<%= link_to(new_post_path, class:"fweet_btn") do%>
+						<div class="btnm btnpink">Fweet</div>
+					<% end %>
+			<div class="users">
+				<%= link_to(user_path(current_user), class:"profile_icon") do %>
+						<div class="user_cont">
+							<div class="user_icon">
+								<%= attachment_image_tag current_user, :profile_image, :fill,1000,1000, fallback:"logo.png",  class:"user_img"%>
+							</div>
+							<div class="user_name">
+									<p class="txts txtbold black"><%= current_user.name %></p>
+									<p class="txts gray">@<%= current_user.id %></p>
+							</div>
+							</div>
+					<% end %>
+			</div>
+		</nav>
+	</header><!-- /header -->

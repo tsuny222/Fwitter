@@ -1,0 +1,13 @@
+<%= render "posts/error", post:@post %>
+<div class="form_wrap pink_border">
+		<h2 class="txtl">Fweet</h2>
+		<div class="fweet_form">
+		<%= form_for(@post) do |f| %>
+			<%= f.text_area :body, class:"form_txtarea"%>
+			<%= f.attachment_field :image%>
+			<div class="align-right">
+				<%= f.submit "Fweet", class:"btns btnpink txts fweet_btn" %>
+			</div>
+		<% end %>
+		</div>
+	</div>

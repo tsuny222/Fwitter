@@ -1,0 +1,18 @@
+<%= render "users/error", user:@user %>
+<div class="form_wrap pink_border">
+		<h2 class="txtl">Edit profile</h2>
+		<div class="profile_form">
+			<%= form_for(@user) do |f| %>
+				<label for="name" class="profile_form_label">名前</label>
+				<%= f.text_field :name, autofocus: true, autocomplete: "name", class:"form_area"%>
+				<label for="name" class="profile_form_label">紹介文</label>
+				<%= f.text_area :introduction, class:"form_txtarea"%>
+				<label for="name" class="profile_form_label">プロフィール画像</label><br>
+				<%= f.attachment_field :profile_image%>
+				<div class="align-right">
+					<%= f.submit "Save", class:"btns btnpink txts save_btn" %>
+				</div>
+			<% end %>
+		</div>
+
+	</div>

@@ -1,0 +1,68 @@
+<aside class="aside mobile_non">
+			<form class="form">
+					<input type="search" name="" value="" placeholder="キーワード検索" class="search_form">
+					<%= fa_icon 'search', class:"search_icon" %>
+				</form>
+		<div class="aside_cont pink_bg">
+			<h3 class="txts txtbold">Japan trends</h3>
+				<div class="box trend_info">
+							<p class="txtxs gray">日本トレンド</p>
+							<p class="txts">予言通り</p>
+							<p class="txts gray">3,567件のフイート</p>
+					</div>
+					<div class="box trend_info">
+							<p class="txtxs gray">日本トレンド</p>
+							<p class="txts">予言通り</p>
+							<p class="txts gray">3,567件のフイート</p>
+					</div>
+					<div class="box trend_info">
+							<p class="txtxs gray">日本トレンド</p>
+							<p class="txts">予言通り</p>
+							<p class="txts gray">3,567件のフイート</p>
+					</div>
+					<h3 class="showmore"><%= link_to posts_path, class:"txts pink" do %>
+						Show more
+						<% end %></h3>
+		</div>
+		<div class="aside_cont pink_bg">
+			<h3 class="txts txtbold">Who to follow</h3>
+			<% @users.each do |user| %>
+					<div class="box users">
+					<%= link_to user_path(user.id) do %>
+					<div class="user_cont">
+						<div class="user_icon">
+							<%= attachment_image_tag user, :profile_image, :fill,1000,1000, fallback:"logo.png",  class:"user_img"%>
+						</div>
+						<div class="user_name black">
+							<p class="txts txtbold"><%= user.name %></p><p class="txts gray">@<%= user.id %></p><br>
+						</div>
+					</div>
+					<% if user.id != current_user.id %>
+					<a class="user_btn">
+						<% if current_user.following?(user) %>
+						   <%= form_for(current_user.active_relationships.find_by(followed_id: user.id),
+						             html: { method: :delete }) do |f| %>
+						      <%= f.submit "Unfollow", class: "btns btnpink" %>
+						    <% end %>
+						  <% else %>
+						  <%= form_for(current_user.active_relationships.build) do |f| %>
+						      <%= hidden_field_tag :followed_id, user.id %>
+						      <%= f.submit "Follow", class: "btns btnwhite" %>
+						<% end %>
+						<% end %>
+					</a>
+					<% end %>
+				<% end %>
+					</div>
+				<% end %>
+					<h3 class="showmore">
+						<%= link_to users_path, class:"txts pink" do %>
+						Show more
+						<% end %>
+					</h3>
+		</div>
+	<footer class="footer">
+			<p class="txtxs">利用規約　プライバシーポリシー　Cookie　広告情報<br>もっと見る　©︎2020 Fwitter, Inc.</p>
+		</footer>
+	</aside>
+</div>
